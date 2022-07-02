@@ -9,9 +9,11 @@ import * as Mui from '@material-ui/core';
 
 
 
+
 export default function Typefilter(props) {
     const [type, setTypes] = useRecoilState(typeState);
     const typeSet = new Set()
+
     for (let i = 0; i < Data.length; i++) {
         if (Data[i].hasOwnProperty("type")) {
             typeSet.add(Data[i].type[0])

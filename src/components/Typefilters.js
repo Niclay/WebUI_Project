@@ -11,6 +11,7 @@ export default function Typefilters(props) {
     
     return (
         <Mui.FormControlLabel value={props.type} control={<Mui.Radio color="primary" onClick={() => setTypes(props.type)}/>} label={props.type} />
+        
     )
     
 }
