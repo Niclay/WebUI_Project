@@ -1,11 +1,10 @@
 import React from 'react'
-import { RecoilRoot, atom, useRecoilState } from 'recoil'
+import { RecoilRoot } from 'recoil'
 import Navbar from './components/Navbar'
 import Filters from './components/Filters'
 import Objects from './components/Objects'
 import './App.css'
 import './index.css'
-import Data from "./data"
 
 
 
