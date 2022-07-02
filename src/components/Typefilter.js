@@ -10,29 +10,33 @@ import * as Mui from '@material-ui/core';
 
 
 export default function Typefilter(props) {
+    const [type, setTypes] = useRecoilState(typeState);
     const typeSet = new Set()
     for (let i = 0; i < Data.length; i++) {
         if (Data[i].hasOwnProperty("type")) {
             typeSet.add(Data[i].type[0])
         }
     }
+    
     const typefilter = [...typeSet].map(item => <Typefilters type={item} />)
-    const [type, setTypes] = useRecoilState(typeState);
+   
 
 
     return (
         <div className="filterwrap">
             <Mui.FormControl>
-                <Mui.FormLabel id="demo-radio-buttons-group-label">Gender</Mui.FormLabel>
+                <Mui.FormLabel id="demo-radio-buttons-group-label">Publication Types</Mui.FormLabel>
                 <Mui.RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="female"
+                    defaultValue="reset"
                     name="radio-buttons-group"
                 >
+                    <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" onClick={() => setTypes("")}/>} label="Show all publication types" />
                     {typefilter}
                 </Mui.RadioGroup>
             </Mui.FormControl>
-            <p><Button variant="outlined" onClick={() => setTypes("")}>Reset filters</Button></p>
+
+
         </div>
     )
 }

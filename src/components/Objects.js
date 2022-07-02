@@ -7,7 +7,7 @@ import { typeState } from '../atoms'
 export default function Objects() {
 
 const [type, setType] = useRecoilState(typeState);
-const filteredcards = (type ? Data.filter(date => date.hasOwnProperty("type") && date.type[0] === type).map(item => <Card {...item}/>) : Data.map(item => <Card {...item}/>))
+const filteredcards = (type !== "" ? Data.filter(date => date.hasOwnProperty("type") && date.type[0] === type).map(item => <Card {...item}/>) : Data.map(item => <Card {...item}/>))
 console.log(type)    
 return (
     <div className="objects--Wrapper">
