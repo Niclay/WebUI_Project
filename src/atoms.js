@@ -8,6 +8,6 @@ export const typeState = atom({
 
 export const yearState = atom({
   key: 'yearState',
-  default:["0","9999"]
+  default:[0,9999]
 });
   

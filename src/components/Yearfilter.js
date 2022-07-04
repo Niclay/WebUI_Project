@@ -20,7 +20,7 @@ export default function Yearfilter() {
 
 
     return (
-        <div class="slider">
+        <div className="slider">
             <p>Time filter</p>
             <Slider
                 getAriaLabel={() => 'Temperature range'}
