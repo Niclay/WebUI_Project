@@ -1,24 +1,20 @@
 import React from "react"
-import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue, } from 'recoil';
+import { useRecoilValue, useSetRecoilState, } from 'recoil';
 
 import Typefilters from "./Typefilters"
-import { typeState } from '../atoms'
+import { typeState, dataState } from '../atoms'
 
 import * as Mui from '@material-ui/core';
 
-
-
-
-
-export default function Typefilter(props) {
-    const [type, setTypes] = useRecoilState(typeState);
-
+export default function Typefilter() {
+    const setTypes = useSetRecoilState(typeState);
+    const data = useRecoilValue(dataState);
 
     const typeSet = new Set()
 
-    for (let i = 0; i < props.data.length; i++) {
-        if (props.data[i].hasOwnProperty("type")) {
-            typeSet.add(props.data[i].type[0])
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].hasOwnProperty("type")) {
+            typeSet.add(data[i].type[0])
         }
     }
     const typefilter = [...typeSet].map(item => <Typefilters type={item} />)

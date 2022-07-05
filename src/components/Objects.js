@@ -1,15 +1,15 @@
 import React from "react"
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import BasicCard from "./Card"
 
 import { typeState, yearState, dataState, counterState} from '../atoms'
 import Button from '@mui/material/Button'
 
-export default function Objects(props) {
+export default function Objects() {
 
-    const [type, setType] = useRecoilState(typeState);
-    const [years, setYears] = useRecoilState(yearState)
-    //const [data, setData] = useRecoilState(dataState)
+    const type = useRecoilValue(typeState);
+    const years = useRecoilValue(yearState)
+    const data = useRecoilValue(dataState)
     const [counter, setCounter] = useRecoilState(counterState)
     
 
@@ -26,7 +26,7 @@ export default function Objects(props) {
             data.filter(date => 
                 filterYears(date)).slice(0,counter)
                 .map(item => <BasicCard {...item} />))
-    const filteredcards = filterData(props.data)
+    const filteredcards = filterData(data)
     
     
     const loadMore = () => setCounter(counter + 8); 

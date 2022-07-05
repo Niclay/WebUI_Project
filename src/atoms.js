@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil'
+import { atom } from 'recoil'
 
 
 
@@ -15,6 +15,16 @@ export const yearState = atom({
 export const counterState = atom({
   key: 'countState',
   default: 8
+})
+
+export const themeState = atom({
+  key: 'themeState',
+  default: "light"
+})
+
+export const dataState = atom({
+  key: 'defaultState',
+  default: []
 })
 
 
