@@ -1,5 +1,5 @@
-import { atom } from 'recoil'
-import Data from './data'
+import { atom, selector } from 'recoil'
+
 
 
 export const typeState = atom({
@@ -17,7 +17,4 @@ export const counterState = atom({
   default: 8
 })
 
-export const dataState = atom({
-  key: 'dataState',
-  default: Data
-})
+

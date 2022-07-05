@@ -1,15 +1,15 @@
 import * as React from "react"
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue, } from 'recoil';
 import { yearState } from "../atoms";
-import Data from "../data"
+
 import Slider from '@mui/material/Slider';
 
 
 
-export default function Yearfilter() {
+export default function Yearfilter(props) {
     const [years, setYears] = useRecoilState(yearState)
     const allyears = []
-    Data.map(date => allyears.push(parseInt(date.year)))
+    props.data.map(date => allyears.push(parseInt(date.year)))
 
     const minyears = Math.min(...allyears)
     const maxyears = Math.max(...allyears)
