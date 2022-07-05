@@ -35,7 +35,7 @@ body {
 }
 
 .filterbox {
-  padding: 10px 0;
+  padding: 0 10px;
   width: 15vw;
   height: auto;
   min-height: 50vh;
@@ -87,4 +87,38 @@ body {
   
 }
 
+
+#dark {
+  background-color: #121212;
+  color: #fff !important;
+}
+
+#dark .MuiIconButton-label {
+  color: #fff;
+}
+
+#dark .filterbox {
+  background-color: rgba(255,255,255,0.05);
+  border-right: solid 1px rgba(255,255,255,0.05);
+}
+#dark .MuiFormLabel-root {
+  color: #fafafa;
+}
+#dark .navbar {
+  background-color: rgba(255,255,255,0.05);
+  border-bottom: solid 1px rgba(255,255,255,0.05);
+}
+#dark .css-pwngrv-MuiPaper-root-MuiCard-root {
+  background-color: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.75);
+  border: none
+}
+
+#dark .css-16m3jxf-MuiTypography-root {
+  color: rgba(255,255,255,0.75);
+}
+
+#dark .css-9eg9l8-MuiTypography-root {
+  color: rgba(255,255,255,0.75);
+}
 

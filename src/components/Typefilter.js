@@ -2,13 +2,14 @@ import React from "react"
 import { useRecoilValue, useSetRecoilState, } from 'recoil';
 
 import Typefilters from "./Typefilters"
-import { typeState, dataState } from '../atoms'
+import { typeState, dataState, themeState } from '../atoms'
 
 import * as Mui from '@material-ui/core';
 
 export default function Typefilter() {
     const setTypes = useSetRecoilState(typeState);
     const data = useRecoilValue(dataState);
+    const theme = useRecoilValue(themeState)
 
     const typeSet = new Set()
 
@@ -30,7 +31,7 @@ export default function Typefilter() {
                     defaultValue="reset"
                     name="radio-buttons-group"
                 >
-                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" onClick={() => setTypes("All")}/>} label="Show all publication types" />
+                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" id={theme} onClick={() => setTypes("All")}/>} label="Show all publication types" />
                     {typefilter}
                 </Mui.RadioGroup>
             </Mui.FormControl>

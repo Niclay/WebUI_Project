@@ -1,6 +1,6 @@
 import * as React from "react"
-import { useSetRecoilState } from 'recoil'
-import { dataState} from './atoms'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { dataState, themeState} from './atoms'
 import Navbar from './components/Navbar'
 import Filters from './components/Filters'
 import Objects from './components/Objects'
@@ -17,8 +17,9 @@ function App() {
        
 }, [])
   
+const theme = useRecoilValue(themeState)
     return (
-        <div className="appWrap">
+        <div id={theme}>
           <Navbar />
           <div className="flex-container">
             <Filters />
