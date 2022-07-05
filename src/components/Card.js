@@ -33,7 +33,7 @@ export default function BasicCard(item) {
                 </Typography>
                 <Typography variant="body2">
                 <span>Veröffentlichungsjahr: {item.year}</span> <br/>
-                <span>Autoren: {item.author}</span> <br/>
+                <span>Autoren: {[...item.author].map(author => <p>{author}</p>)}</span> <br/>
                 <span>Publication type: {item.type}</span>
                 </Typography>
             </CardContent>

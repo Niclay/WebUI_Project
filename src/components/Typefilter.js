@@ -34,7 +34,7 @@ export default function Typefilter(props) {
                     defaultValue="reset"
                     name="radio-buttons-group"
                 >
-                    <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" onClick={() => setTypes("All")}/>} label="Show all publication types" />
+                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" onClick={() => setTypes("All")}/>} label="Show all publication types" />
                     {typefilter}
                 </Mui.RadioGroup>
             </Mui.FormControl>
