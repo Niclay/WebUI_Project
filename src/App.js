@@ -19,7 +19,7 @@ function App() {
   
 const theme = useRecoilValue(themeState)
     return (
-        <div id={theme}>
+        <div id={theme} className="body">
           <Navbar />
           <div className="flex-container">
             <Filters />

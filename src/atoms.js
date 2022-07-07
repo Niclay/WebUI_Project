@@ -1,9 +1,6 @@
 import { atom } from 'recoil'
 
-export const styleState = atom({
-  key: 'themeState',
-  default: "light"
-})
+
 
 export const typeState = atom({
     key: 'typeState',
@@ -22,7 +19,7 @@ export const counterState = atom({
 
 export const themeState = atom({
   key: 'themeState',
-  default: "light"
+  default: "dark"
 })
 
 export const dataState = atom({
@@ -32,7 +29,7 @@ export const dataState = atom({
 
 export const checkedState = atom ({
   key: 'checkedState',
-  default: false
+  default: true
 })
 
 

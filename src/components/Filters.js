@@ -12,7 +12,7 @@ export default function Filters() {
     
     const handleChange = (event) => {
         setChecked(!checked);
-        (theme == "light" ? setTheme("dark") : setTheme("light"))
+        (theme === "light" ? setTheme("dark") : setTheme("light"))
       };
 
     return (

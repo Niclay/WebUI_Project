@@ -25,7 +25,7 @@ export default function Objects() {
             : 
             data.filter(date => 
                 filterYears(date)).slice(0,counter)
-                .map(item => <BasicCard {...item} />))
+                .map(item => <BasicCard key = {item.key} {...item} />))
     const filteredcards = filterData(data)
     
     

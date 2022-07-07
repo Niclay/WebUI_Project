@@ -18,7 +18,7 @@ export default function Typefilter() {
             typeSet.add(data[i].type[0])
         }
     }
-    const typefilter = [...typeSet].map(item => <Typefilters type={item} />)
+    const typefilter = [...typeSet].map(item => <Typefilters key ={item} type={item} />)
    
 
 
