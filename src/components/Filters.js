@@ -20,7 +20,7 @@ export default function Filters() {
             <Typefilter data={data} />
             <Yearfilter data={data} />
             <div className="switch">
-                Switch Theme
+                <p className="MuiFormLabel-root">Switch Theme:</p>
                 <Switch
                     checked={checked}
                     onChange={() => handleChange()}

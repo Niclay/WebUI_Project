@@ -34,8 +34,10 @@ export default function Objects() {
         {setCounter(counter - 8)}}; 
     
     return (
-        <div className="objects--Wrapper">
-            {filteredcards}
+        <div className ="wrapper">
+            <div className="objects--Wrapper">
+                {filteredcards}
+            </div>
             <div className = "objects--Load-more-Button">
                 <Button variant="contained" className="load-more-button" onClick={() => loadMore()}>Show more</Button>
                 <Button variant="contained" className="load-more-button" onClick={() => loadLess()}>Show less</Button>

@@ -44,7 +44,6 @@ body {
 
 .filterwrap {
   margin: 30px 12px;
-  border-radius: 5px;
   width: auto;
   height: auto;
 }
@@ -53,11 +52,15 @@ body {
   font-size: 12px;
 }
 
+.wrapper {
+  width: 85vw;
+}
+
 .objects--Wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 85vw;
+  width: 100%;
   height: auto;
 }
 
@@ -72,20 +75,19 @@ body {
 
 
 .slider {
-  margin: 20px;
+  margin: 30px 12px;
+}
+
+.switch {
+  margin: 30px 12px;
 }
 
 .objects--Load-more-Button {
-  margin: 2% 0;
-  width: 100%;
-  align-items: center;
-}
-
-.load-more-button {
-  left: 50%;
-  -ms-transform: translate(-50%);
-  transform: translate(-50%);
-  
+  display: flex;
+  justify-content: space-around;
+  margin: 2% 40%;
+  width: 20%;
+  padding: 0, 20%;
 }
 
 
@@ -126,4 +128,5 @@ body {
 .body {
   min-height: 100vh;
 }
+
 
