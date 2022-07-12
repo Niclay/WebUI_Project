@@ -6,7 +6,7 @@ import { typeState, dataState, themeState, counterState } from '../atoms'
 
 import * as Mui from '@material-ui/core';
 
-export default function Typefilter() {
+export default () =>{
     const setTypes = useSetRecoilState(typeState);
     const data = useRecoilValue(dataState);
     const setCounter = useSetRecoilState(counterState);
@@ -38,7 +38,7 @@ export default function Typefilter() {
                     defaultValue="reset"
                     name="radio-buttons-group"
                 >
-                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" id={theme} onClick={() => handleClick()}/>} label="Show all publication types" />
+                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" id={theme} onClick={handleClick}/>} label="Show all publication types" />
                     {typefilter}
                 </Mui.RadioGroup>
             </Mui.FormControl>

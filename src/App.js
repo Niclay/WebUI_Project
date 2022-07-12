@@ -10,7 +10,7 @@ import './index.css'
 function App() {
 
   const setFetchedData = useSetRecoilState(dataState)
-  React.useEffect(function() {
+  React.useEffect(() => {
     fetch("http://api.vissights.net/semaservice-web-api-vissights/v2/eg/publications/search?q=Visual%20Analytics")
         .then(res => res.json())
         .then(data => setFetchedData(data))

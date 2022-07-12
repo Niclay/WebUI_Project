@@ -27,6 +27,10 @@ export const dataState = atom({
   default: []
 })
 
+export const filteredDataState = atom({
+  key: 'filteredDataState',
+  default: []
+})
 export const checkedState = atom ({
   key: 'checkedState',
   default: true

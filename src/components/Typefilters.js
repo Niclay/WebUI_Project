@@ -7,7 +7,7 @@ import * as Mui from '@material-ui/core';
 
 
 
-export default function Typefilters(props) {
+export default (props) => {
     const setTypes = useSetRecoilState(typeState);
     const theme = useRecoilValue(themeState)
     const setCounter = useSetRecoilState(counterState)    

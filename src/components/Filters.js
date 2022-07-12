@@ -10,7 +10,7 @@ export default function Filters() {
     const [theme, setTheme] = useRecoilState(themeState)
     const [checked, setChecked] = useRecoilState(checkedState)
     
-    const handleChange = (event) => {
+    const handleChange = () => {
         setChecked(!checked);
         (theme === "light" ? setTheme("dark") : setTheme("light"))
       };
@@ -23,7 +23,7 @@ export default function Filters() {
                 <p className="MuiFormLabel-root">Switch Theme:</p>
                 <Switch
                     checked={checked}
-                    onChange={() => handleChange()}
+                    onChange={handleChange}
                     inputProps={{ 'aria-label': 'controlled' }}
                 />
             </div>
