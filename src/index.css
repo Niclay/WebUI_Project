@@ -32,10 +32,11 @@ footer {
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: center;
+  bottom: 0;
 }
 
 .navbar {
-  height: 125px;
+  height: 15vh;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   background-color: #eeeeee;
@@ -61,6 +62,7 @@ footer {
 
 .flex-container {
   display: flex;
+  min-height: 78vh;
 }
 
 .filterbox {

@@ -21,11 +21,11 @@ export default () => {
                 checkType(date, "type") && 
                 compareType(date) && 
                 filterYears(date)).slice(0,counter)
-                .map(item => <BasicCard key ={item[7]} {...item} />) 
+                .map(item => <BasicCard key ={item.key} id = {item.key} {...item} />) 
             : 
                 data.filter(date => 
                     filterYears(date)).slice(0,counter)
-                    .map(item => <BasicCard key ={item[7]} {...item} />));
+                    .map(item => <BasicCard key ={item.key} id = {item.key} {...item} />));
 
     //check for property type to filter                
     const checkType = (item,type) => item.hasOwnProperty(type);

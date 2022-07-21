@@ -9,7 +9,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function BasicCard(item) {
+export default function BasicCard(props) {
+   const str = props.id + '';
+   const words = str.split(':');
+
     return (
         <Card className="card" sx={{ minWidth: 275 }}>
             <CardContent>
@@ -17,21 +20,21 @@ export default function BasicCard(item) {
                     Publication
                 </Typography>
                 <Typography variant="h5" component="div">
-                    {item.title}
+                    {props.title}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Journal: {item.journal}
+                    Journal: {props.journal}
                 </Typography>
                 <Typography variant="body2">
-                <span>Release year: {item.year}</span> <br/>
+                <span>Release year: {props.year}</span> <br/>
                 <p></p>
-                <span>Authors: {[...item.author].map(author => <> | {author} </>)}</span> <br/>
+                <span>Authors: {[...props.author].map(author => <> | {author} </>)}</span> <br/>
                 <p></p>
-                <span>Publication type: {item.type}</span>
+                <span>Publication type: {props.type}</span>
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" href="http://www.google.com">Learn More</Button>
+                <Button size="small" href={`http://${words[1]}/handle/${words[2]}`} target="_blank">Learn More</Button>
             </CardActions>
         </Card>
     );
