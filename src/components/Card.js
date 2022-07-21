@@ -16,12 +16,13 @@ export default function BasicCard(props) {
     return (
         <Card className="card" sx={{ minWidth: 275 }}>
             <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom >
                     Publication
                 </Typography>
-                <Typography variant="h5" component="div">
+                <Typography variant="h4" component="div">
                     {props.title}
                 </Typography>
+                <p></p>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     Journal: {props.journal}
                 </Typography>
@@ -34,7 +35,7 @@ export default function BasicCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" href={`http://${words[1]}/handle/${words[2]}`} target="_blank">Learn More</Button>
+                <Button size="large" href={`http://${words[1]}/handle/${words[2]}`} target="_blank">Learn More</Button>
             </CardActions>
         </Card>
     );

@@ -1,16 +1,32 @@
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 921px) {
   .MuiTypography-body1 {
+    font-size: 1.5rem !important;
+  }
+ 
+}
+@media screen and (max-width: 920px) {
+  .MuiTypography-body1 {
+    font-size: 0.75rem !important;
+  }
+  .MuiFormLabel-root {
     font-size: 1rem !important;
   }
-}
-
-@media screen and (max-width: 600px) {
-  .MuiTypography-body1 {
-    font-size: .75rem !important;
-  }
   .navbar--h1 {
-    font-size: 0.7rem;
+    font-size: 0.75rem !important;
+  }
+ 
+
+ @media screen and (max-width: 650px) {
+ } 
+  .navbar--h1 {
+    font-size: 0.8rem !important;
     padding-right: 10px !important;
+  }
+  #demo-radio-buttons-group-label {
+    font-size: 1rem !important;
+  }
+  .MuiTypography-body1 {
+    font-size: 0.7rem !important;
   }
 
 }
@@ -19,6 +35,7 @@ html {
 }
 body {
   margin: 0;
+  font-size: 1.5rem !important;
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,10 +60,16 @@ footer {
 }
 
 .navbar--logo {
-  padding: 20px 0 10px 25px;
+  padding-left: 20px;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
+.logo {
+  display: block;
+  margin: auto;
+}
 .navbar--h1 {
   width: 100%;
   display: flex;
@@ -54,6 +77,7 @@ footer {
   align-items: center; 
   padding-right: 50px;
   padding-left: 20px;
+  font-size: 1.75rem;
 }
 
 .navbar--h1 h1 {
@@ -67,12 +91,10 @@ footer {
 
 .filterbox {
   padding: 0 10px;
-  min-width: 150px;
+  min-width: 100px;
   width: 15vw;
   height: auto;
   min-height: 50vh;
- 
-  
 }
 
 .filterwrap {
@@ -127,7 +149,7 @@ footer {
   color: #fff !important;
 }
 
-#dark .MuiIconButton-label {
+#dark .MuiIconButton-label{
   color: #fff;
 }
 
@@ -145,11 +167,25 @@ footer {
   border: none
 }
 
+#dark .css-mx8tbv {
+  background-color: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.75);
+  border: none
+}
+
 #dark .css-16m3jxf-MuiTypography-root {
   color: rgba(255,255,255,0.75);
 }
 
+#dark .css-1w6wz2d {
+  color: rgba(255,255,255,0.75);
+}
+
 #dark .css-9eg9l8-MuiTypography-root {
+  color: rgba(255,255,255,0.75);
+}
+
+#dark .css-1kyekmn {
   color: rgba(255,255,255,0.75);
 }
 
@@ -164,5 +200,27 @@ footer {
 .css-dmmspl-MuiFormGroup-root {
   margin: 30px 9px !important;
 }
+
+.css-e784if-MuiTypography-root {
+  font-size: 1.25rem !important;
+}
+
+.MuiFormLabel-root {
+  font-size: 1.5rem !important;
+}
+
+.MuiFormControl-root {
+  max-width: 100%;
+}
+
+.MuiFormControlLabel-root {
+  max-width: 100%;
+}
+
+.css-68o8xu {
+  font-size: 1.25rem !important;
+}
+
+
 
 

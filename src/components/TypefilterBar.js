@@ -34,7 +34,7 @@ export default () =>{
                 <Mui.FormLabel 
                     id="demo-radio-buttons-group-label">Publication Types
                 </Mui.FormLabel>
-                <p></p>
+                <br/>
                 <Mui.RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="reset"
