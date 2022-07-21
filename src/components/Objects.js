@@ -33,8 +33,6 @@ export default () => {
     const loadLess = () => setCounter(counter - 8);
    
     
-    
-    
     return (
         <div className ="wrapper">
             <div className="objects--Wrapper">

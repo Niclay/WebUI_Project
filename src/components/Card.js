@@ -9,7 +9,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-
 export default function BasicCard(item) {
     return (
         <Card className="card" sx={{ minWidth: 275 }}>

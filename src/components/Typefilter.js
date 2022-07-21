@@ -7,6 +7,7 @@ import { typeState, dataState, themeState, counterState } from '../atoms'
 import * as Mui from '@material-ui/core';
 
 export default () =>{
+
     const setTypes = useSetRecoilState(typeState);
     const data = useRecoilValue(dataState);
     const setCounter = useSetRecoilState(counterState);
@@ -19,6 +20,7 @@ export default () =>{
             typeSet.add(data[i].type[0])
         }
     }
+
     const typefilter = [...typeSet].map(item => <Typefilters key ={item} type={item} />)
    
     const handleClick = () => {
@@ -42,8 +44,6 @@ export default () =>{
                     {typefilter}
                 </Mui.RadioGroup>
             </Mui.FormControl>
-
-
         </div>
     )
 }

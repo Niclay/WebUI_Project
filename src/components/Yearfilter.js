@@ -4,8 +4,6 @@ import { yearState, dataState } from "../atoms";
 
 import Slider from '@mui/material/Slider';
 
-
-
 export default function Yearfilter() {
     const [years, setYears] = useRecoilState(yearState)
     const data = useRecoilValue(dataState)
@@ -18,7 +16,6 @@ export default function Yearfilter() {
     function changeHandler(e,value) {
         setYears(value)
     }
-
 
     return (
         <div className="slider">
