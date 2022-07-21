@@ -21,7 +21,7 @@ export default function Yearfilter() {
         <div className="slider">
             <p className="MuiFormLabel-root">Time filter</p>
             <Slider
-                getAriaLabel={() => 'Temperature range'}
+                step= {1}
                 min= {minyears}
                 max= {maxyears}
                 defaultValue = {[minyears, maxyears]}

@@ -4,10 +4,11 @@ import { dataState, themeState} from './atoms'
 import Navbar from './components/Navbar'
 import Filters from './components/Filters'
 import Objects from './components/Objects'
+import Footer from './components/Footer'
 import './App.css'
 import './index.css'
 
-function App() {
+export default function App() {
 
   const setFetchedData = useSetRecoilState(dataState)
   React.useEffect(() => {
@@ -24,11 +25,11 @@ const theme = useRecoilValue(themeState)
           <div className="flex-container">
             <Filters />
             <Objects />
-            
           </div>
+          <Footer/>
         </div>
     );
   
 }
 
-export default App
+

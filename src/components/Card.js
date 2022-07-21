@@ -23,13 +23,15 @@ export default function BasicCard(item) {
                     Journal: {item.journal}
                 </Typography>
                 <Typography variant="body2">
-                <span>Veröffentlichungsjahr: {item.year}</span> <br/>
-                <span>Autoren: {[...item.author].map(author => <span>{author}, </span>)}</span> <br/>
+                <span>Release year: {item.year}</span> <br/>
+                <p></p>
+                <span>Authors: {[...item.author].map(author => <> | {author} </>)}</span> <br/>
+                <p></p>
                 <span>Publication type: {item.type}</span>
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button size="small" href="http://www.google.com">Learn More</Button>
             </CardActions>
         </Card>
     );

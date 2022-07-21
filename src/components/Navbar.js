@@ -10,6 +10,7 @@ export default function Navbar() {
             </div>
             <div className="navbar--h1">
                 <h1>Dynamic Publications Viewer Tool</h1>
+               
             </div>
         </div>
     )
