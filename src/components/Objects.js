@@ -13,9 +13,10 @@ export default () => {
     const [counter, setCounter] = useRecoilState(counterState);
     
 
-    //filter data
+    //filterData
     //if type is selected, filter by type and date
-    //if type isnt selected, filter by date
+    //if type isnt selected, filter only by date
+    //Line 25 / 29 -> BasicCard abrufen: key muss für React angegeben werden, key nochmal als id übergeben um in BasicCard weiterzuverwendet (sonst weint React, zeig ich dir morgen) -> ...item = alles von item 
     const filterData = (data) => (type !== "All" ? 
             data.filter(date => 
                 checkType(date, "type") && 
@@ -44,6 +45,7 @@ export default () => {
     const loadLess = () => setCounter(counter - 8);
    
     
+    //Line 54: {counter > 8 && JSX} -> conditional rendering, only render JSX if counter > 8 -> Load less lädt 8 Karten weniger -> demnach nur rendern wenn mehr als 8 angezeigt werden
     return (
         <div className ="wrapper">
             <div className="objects--Wrapper">
