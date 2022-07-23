@@ -1,7 +1,7 @@
 import React from "react"
 import { useRecoilValue, useRecoilState } from "recoil"
 import { dataState, themeState, checkedState } from '../atoms'
-import Typefilter from './TypefilterBar'
+import TypefilterBar from './TypefilterBar'
 import Yearfilter from './Yearfilter'
 import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
@@ -73,10 +73,8 @@ export default function Filters() {
     //Returned Typefilter Component, Yearfilter component und Darkmode button
     return (
         <div className="filterbox">
-            <Typefilter data={data} />
+            <TypefilterBar data={data} />
             <Yearfilter data={data} />
-
-
             <FormGroup>
                 <FormControlLabel
                     control={<MaterialUISwitch sx={{ m: 1 }} checked={checked} onChange={handleChange}/>}

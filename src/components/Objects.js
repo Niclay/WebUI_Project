@@ -54,8 +54,7 @@ export default () => {
             <div className = "objects--Load-more-Button">
             {counter > 8 &&<Button variant="contained" className="load-more-button" onClick={loadLess}>Show less</Button>}
                 <Button variant="contained" className="load-more-button" onClick={loadMore}>Show more</Button>
-                 
-        </div>
+            </div>
         </div>
     )
 }

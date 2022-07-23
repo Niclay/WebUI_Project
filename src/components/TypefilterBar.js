@@ -25,6 +25,7 @@ export default () =>{
 
     //Für jeden Typwert im Set oben einen Typefilter erstellen
     const typefilter = [...typeSet].map(item => <Typefilters key ={item} type={item} />)
+
    
     //Klicken des Radiobuttons "Show all" setzt Typ auf "all" und Counter auf "8" wodurch nur 8 Cards gerendert werden um performanceprobleme zu vermeiden
     const handleClick = () => {

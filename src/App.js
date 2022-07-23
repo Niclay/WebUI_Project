@@ -13,6 +13,7 @@ export default function App() {
 
   //setFetchedData als Statesetter function 
   const setFetchedData = useSetRecoilState(dataState)
+  const theme = useRecoilValue(themeState)
 
 
   //useEffect ist Hook, der nach dem ersten Rendern der Seite ausgeführt wird
@@ -27,8 +28,6 @@ export default function App() {
 //auskommentierte SetFunction für das Verwenden von lokal gespeicherten Daten anstelle von fetch oben (da firebase ja wegen http rumweint)
 //setFetchedData(Data)
 
-//State zum applien von dark / light mode -> wird Wrapper div in line 35 als ID übergeben um verschiedene CSS zu applien
-const theme = useRecoilValue(themeState)
 
 //Wrapper -> Navbar -> Filter (Sidebar) / Objects (main content) side by side -> Footer
     return (
