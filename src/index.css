@@ -195,6 +195,7 @@ footer {
 
 .body {
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 .css-dmmspl-MuiFormGroup-root {
