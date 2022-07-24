@@ -41,7 +41,7 @@ export default () =>{
                     defaultValue="reset"
                     name="radio-buttons-group"
                 >
-                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" id={theme} onClick={handleClick}/>} label="Show all publication types" />
+                <Mui.FormControlLabel value="reset" control={<Mui.Radio color="primary" id={theme} onClick={handleClick}/>} label="Show all" />
                     {typefilter}
                 </Mui.RadioGroup>
             </Mui.FormControl>
