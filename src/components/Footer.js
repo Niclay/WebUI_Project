@@ -1,7 +1,6 @@
 import React from 'react'
 
-export default function Footer() {
-    
+export default () =>{
     return (
         <footer>
             <small>&copy; Copyright 2022, WebUserInterfaces</small>

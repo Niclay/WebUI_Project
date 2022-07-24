@@ -9,14 +9,14 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 
-export default function Filters() {
+export default () => {
     
     //states
     const data = useRecoilValue(dataState)
     const [theme, setTheme] = useRecoilState(themeState)
     const [checked, setChecked] = useRecoilState(checkedState)
 
-    //darkmode button importiert -> ignore
+   //theme toggle Button imported from MUI 
     const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         width: 62,
         height: 34,
@@ -64,20 +64,19 @@ export default function Filters() {
         },
     }));
 
-    //klicken von Darkmode button ändert Themestate zwischen light und dark
+    //change theme 
     const handleChange = () => {
         setChecked(!checked);
         (theme === "light" ? setTheme("dark") : setTheme("light"))
     };
 
-    //Returned Typefilter Component, Yearfilter component und Darkmode button
     return (
         <div className="filterbox">
             <TypefilterBar data={data} />
             <Yearfilter data={data} />
             <FormGroup>
                 <FormControlLabel
-                    control={<MaterialUISwitch sx={{ m: 1 }} checked={checked} onChange={handleChange}/>}
+                    control={<MaterialUISwitch sx={{ m: 1 }} checked={checked} onClick={handleChange}/>}
                     label="Switch Theme"
                 />
             </FormGroup>

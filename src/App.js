@@ -1,4 +1,5 @@
 import * as React from "react"
+
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { dataState, themeState} from './atoms'
 import Navbar from './components/Navbar'
@@ -9,27 +10,21 @@ import Data from './Data.json'
 import './App.css'
 import './index.css'
 
-export default function App() {
+export default () => {
 
-  //setFetchedData als Statesetter function 
+  //states
   const setFetchedData = useSetRecoilState(dataState)
   const theme = useRecoilValue(themeState)
 
-
-  //useEffect ist Hook, der nach dem ersten Rendern der Seite ausgeführt wird
-  //fetched data von API, wandelt in JSON um und packt sie in den FetchedData State
-  // [] in Line 25 ist das "dependency Array. Wenn sich das Array ändert wird der useEffect Hook erneut ausgeführt -> leer, da wir nur 1x daten abfragen wollen"
+ //fetch data
   React.useEffect(() => {
     fetch("http://api.vissights.net/semaservice-web-api-vissights/v2/eg/publications/search?q=Visual%20Analytics")
         .then(res => res.json())
         .then(data => setFetchedData(data))    
 }, [])
 
-//auskommentierte SetFunction für das Verwenden von lokal gespeicherten Daten anstelle von fetch oben (da firebase ja wegen http rumweint)
 //setFetchedData(Data)
 
-
-//Wrapper -> Navbar -> Filter (Sidebar) / Objects (main content) side by side -> Footer
     return (
         <div id={theme} className="body">
           <Navbar />

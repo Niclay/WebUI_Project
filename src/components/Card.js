@@ -7,13 +7,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function BasicCard(props) {
-    //Splitten von übergebener ID um sie unten in URL umzuwandeln
+export default (props) => {
+
+    //splitting key for URL
    const str = props.id + '';
    const words = str.split(':');
 
-    //Card von MaterialUI importiert, nur die Werte ersetzt
-    //Line 39 zusammenbasteln der URL für den Link zu den Websites
     return (
         <Card className="card" sx={{ minWidth: 275 }}>
             <CardContent>
