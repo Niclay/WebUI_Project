@@ -17,13 +17,13 @@ export default () => {
   const theme = useRecoilValue(themeState)
 
  //fetch data
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     fetch("http://api.vissights.net/semaservice-web-api-vissights/v2/eg/publications/search?q=Visual%20Analytics")
         .then(res => res.json())
         .then(data => setFetchedData(data))    
-}, [])
+}, [])*/
 
-//setFetchedData(Data)
+setFetchedData(Data)
 
     return (
         <div id={theme} className="body">
