@@ -28,9 +28,9 @@ export default (props) => {
                 </Typography>
                 <Typography variant="body2">
                 <span>Release year: {props.year}</span> <br/>
-                <p></p>
-                <span>Authors: {[...props.author].map(author => <> | {author} </>)}</span> <br/>
-                <p></p>
+                <br/>
+                <span>Authors: {[...props.author].map(author => <span key={author}> | {author} </span>)}</span> <br/>
+                <br/>
                 <span>Publication type: {props.type}</span>
                 </Typography>
             </CardContent>
