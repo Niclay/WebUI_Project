@@ -1,6 +1,6 @@
 import React from "react"
 import { useRecoilValue, useRecoilState } from "recoil"
-import { dataState, themeState, checkedState } from '../atoms'
+import { dataState, themeState, checkedState, searchState, filteredDataState } from '../atoms'
 import TypefilterBar from './TypefilterBar'
 import Yearfilter from './Yearfilter'
 import Switch from '@mui/material/Switch';
@@ -10,13 +10,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 
 
 export default () => {
-    
+
     //states
     const data = useRecoilValue(dataState)
     const [theme, setTheme] = useRecoilState(themeState)
     const [checked, setChecked] = useRecoilState(checkedState)
+    const [search, setSearch] = useRecoilState(searchState)
+    const testData = useRecoilValue(filteredDataState)
 
-   //theme toggle Button imported from MUI 
+    //theme toggle Button imported from MUI 
     const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         width: 62,
         height: 34,
@@ -70,16 +72,47 @@ export default () => {
         (theme === "light" ? setTheme("dark") : setTheme("light"))
     };
 
-    return (
-        <div className="filterbox">
-            <TypefilterBar data={data} />
-            <Yearfilter data={data} />
-            <FormGroup>
-                <FormControlLabel
-                    control={<MaterialUISwitch sx={{ m: 1 }} checked={checked} onClick={handleChange}/>}
-                    label="Switch Theme"
-                />
-            </FormGroup>
-        </div>
-    )
+    const handleSearch = () => {
+        setSearch(document.getElementById("inputfilter").value)
+        console.log(testData)
+    }
+
+    var enter = document.getElementById("inputfilter");
+    if (enter) {
+        enter.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("inputButtonFilter").click();
+            }
+        })
+    };
+
+    if (search === "" || data === null) {
+        return (
+            <div className="filter-box">
+                <input type="text" id="inputfilter" placeholder="Suche..."></input>
+                <button type="submit" id="inputButtonFilter" onClick={handleSearch}>
+                    <i className="fa fa-search"></i>
+                </button>
+            </div>)
+    }
+    else {
+        return (
+            <div className="filter-box">
+
+                <input type="text" id="inputfilter" placeholder="Search...">
+                </input>
+                <button type="submit" id="inputButtonFilter" onClick={handleSearch}><i className="fa fa-search"></i></button>
+
+                <TypefilterBar data={data} />
+                <Yearfilter data={data} />
+                <FormGroup>
+                    <FormControlLabel
+                        control={<MaterialUISwitch sx={{ m: 1 }} checked={checked} onClick={handleChange} />}
+                        label="Switch Theme"
+                    />
+                </FormGroup>
+            </div>
+        )
+    }
 }

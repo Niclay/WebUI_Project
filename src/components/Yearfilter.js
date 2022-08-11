@@ -11,18 +11,22 @@ export default () => {
     const [years, setYears] = useRecoilState(yearState)
     const data = useRecoilValue(dataState)
 
-    const allyears = []
-    data.map(date => allyears.push(parseInt(date.year)))
-
-    const minyears = Math.min(...allyears)
-    const maxyears = Math.max(...allyears)
+  
+   const yearSet = new Set();
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].hasOwnProperty("year")) {
+            yearSet.add(data[i].year[0])
+        }
+    }
+    const minyears = Math.min(...yearSet)
+    const maxyears = Math.max(...yearSet)
 
     function changeHandler(e,value) {
         setYears(value)
     }
 
     return (
-        <div className="slider">
+        <div className="filter--slider">
             <p className="MuiFormLabel-root">Time filter</p>
             <Slider
                 step= {1}

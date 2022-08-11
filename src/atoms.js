@@ -33,5 +33,11 @@ export const checkedState = atom ({
   key: 'checkedState',
   default: true
 })
+export const searchState = atom({
+  key: 'searchState',
+  default: ""
+})
+
+
 
 

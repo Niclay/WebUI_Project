@@ -30,7 +30,7 @@ export default () =>{
     }
     
     return (
-        <div className="filterwrap">
+        <div className="filter-wrap">
             <Mui.FormControl>
                 <Mui.FormLabel 
                     id="demo-radio-buttons-group-label">Publication Types
