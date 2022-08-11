@@ -57,8 +57,6 @@ export default () => {
           <img src={logo} alt="" className="rotate"></img>
         </div>
         <div className="welcome--search">
-          <br/>
-          <br/>
           <h3>Search publications</h3>
           <input type="text" id="input" placeholder="Search e.g. Visual Analytics"></input>
           <button type="submit" id="inputButton" onClick={showBody}>

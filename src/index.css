@@ -41,7 +41,9 @@ body {
   overflow-x: hidden;
   height: 100vh;
 }
-
+h1 {
+  margin: 0;
+}
 .body {
   min-height: 100vh;
   display:none;
@@ -240,9 +242,9 @@ footer {
 }
 
 .welcome {
-  height: 100vh;
+  max-height: 100vh;
   width: 100vw;
-  padding-top: 30vh;
+
   
 }
 
@@ -269,7 +271,8 @@ footer {
 
 .welcome--content {
   width: 40vw;
-  height: 20vh;
+  height: 50vh;
+  padding-top: 7.5%;
   text-align: center;
   margin: auto;
   animation: fadeInAnimation ease 4s;
@@ -279,7 +282,7 @@ footer {
 
 .welcome--search {
   width: 40vw;
-  height: 20vh;
+  height: 50vh;
   text-align: center;
   margin: auto;
   animation: fadeInAnimationSearch ease 6s;
