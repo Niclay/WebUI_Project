@@ -6,9 +6,10 @@ import Navbar from './components/Navbar'
 import Filters from './components/Filters'
 import Objects from './components/Objects'
 import Footer from './components/Footer'
+import Welcome from './components/Welcome'
 import './App.css'
 import './index.css'
-import logo from './images/favicon-upscaled.png'
+
 
 export default () => {
 
@@ -26,19 +27,6 @@ export default () => {
       .then(data => setFetchedData(data))
   }, [search])
 
-  const showBody = () => {
-    setSearch(document.getElementById("input").value)
-    if (document.getElementById("input").value === "") {
-      document.getElementsByClassName("error")[0].style.display = "block";
-    }
-    else {
-     
-      document.getElementsByClassName("body")[0].style.display = "block";
-      document.getElementsByClassName("welcome")[0].style.display = "none"
-  } 
-  }
-
-
   var enter = document.getElementById("input");
   if(enter) {
     enter.addEventListener("keypress", function(event) {
@@ -49,22 +37,7 @@ export default () => {
   })};
   return (
     <div className="root">
-      <div id={theme} className="welcome fadeout">
-        <div className="welcome--content">
-          <h1>Welcome to</h1>
-          <h2>Dynamic Publications</h2>
-          <br/>
-          <img src={logo} alt="" className="rotate"></img>
-        </div>
-        <div className="welcome--search">
-          <h3>Search publications</h3>
-          <input type="text" id="input" placeholder="Search e.g. Visual Analytics"></input>
-          <button type="submit" id="inputButton" onClick={showBody}>
-            <i className="fa fa-search"></i>
-          </button>
-          <div className="error">The search field can not be empty!</div>
-        </div>
-      </div>
+      <Welcome />
       <div id={theme} className="body">
         <Navbar />
         <div className="flex-container">
