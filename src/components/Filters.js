@@ -1,8 +1,10 @@
 import React from "react"
-import { useRecoilValue, useRecoilState } from "recoil"
-import { dataState, themeState, checkedState, searchState, filteredDataState } from '../atoms'
 import TypefilterBar from './TypefilterBar'
 import Yearfilter from './Yearfilter'
+
+import { useRecoilValue, useRecoilState } from "recoil"
+import { dataState, themeState, checkedState, searchState } from '../atoms'
+
 import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
@@ -16,7 +18,6 @@ export default () => {
     const [theme, setTheme] = useRecoilState(themeState)
     const [checked, setChecked] = useRecoilState(checkedState)
     const [search, setSearch] = useRecoilState(searchState)
-    const testData = useRecoilValue(filteredDataState)
 
     //theme toggle Button imported from MUI 
     const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -66,17 +67,18 @@ export default () => {
         },
     }));
 
-    //change theme 
+    //handle theme change 
     const handleChange = () => {
         setChecked(!checked);
         (theme === "light" ? setTheme("dark") : setTheme("light"))
     };
 
+    //handle search request
     const handleSearch = () => {
         setSearch(document.getElementById("inputfilter").value)
-        console.log(testData)
     }
 
+    //enable submit via Enter Key on input field 'inputfilter'
     var enter = document.getElementById("inputfilter");
     if (enter) {
         enter.addEventListener("keypress", function (event) {
@@ -87,6 +89,7 @@ export default () => {
         })
     };
 
+    //if no data found, return only search field + theme toggler
     if (search === "" || data === null) {
         return (
             <div className="filter-box">
@@ -94,8 +97,15 @@ export default () => {
                 <button type="submit" id="inputButtonFilter" onClick={handleSearch}>
                     <i className="fa fa-search"></i>
                 </button>
+                <FormGroup>
+                    <FormControlLabel
+                        control={<MaterialUISwitch sx={{ m: 1 }} checked={checked} onClick={handleChange} />}
+                        label="Switch Theme"
+                    />
+                </FormGroup>
             </div>)
     }
+    //if data found, return search field + filters + theme toggler
     else {
         return (
             <div className="filter-box">

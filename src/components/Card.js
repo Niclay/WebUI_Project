@@ -9,11 +9,12 @@ import Typography from '@mui/material/Typography';
 
 export default (props) => {
 
-    //splitting key for URL
+    //splitting key(id) for "Learn more"-URL
    const str = props.id + '';
    const words = str.split(':');
 
     return (
+        //Materiual UI Card; Includes title, journal, year, authors, type of publication
         <Card className="card" sx={{ minWidth: 275 }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom >

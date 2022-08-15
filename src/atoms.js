@@ -7,7 +7,7 @@ export const typeState = atom({
 
 export const yearState = atom({
   key: 'yearState',
-  default:[0,9999]
+  default:[-Infinity,Infinity]
 });
 
 export const counterState = atom({
@@ -25,10 +25,6 @@ export const dataState = atom({
   default: []
 })
 
-export const filteredDataState = atom({
-  key: 'filteredDataState',
-  default: []
-})
 export const checkedState = atom ({
   key: 'checkedState',
   default: true

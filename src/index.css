@@ -1,3 +1,5 @@
+/** Media queries **/
+
 @media screen and (min-width: 921px) {
   .MuiTypography-body1 {
     font-size: 1.5rem !important;
@@ -27,9 +29,9 @@
     font-size: 0.7rem !important;
   }
 }
-html {
-  height: 100%;
-}
+
+/** Body Element Styling **/
+
 body {
   margin: 0;
   display: block;
@@ -65,6 +67,8 @@ footer {
   
 }
 
+/** Navbar Styling **/
+
 .navbar {
   height: 15vh;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -95,6 +99,8 @@ footer {
   font-size: 1.75rem;
   letter-spacing: -1.5px;
 }
+
+/** Main Content Styling **/
 
 .flex-container {
   display: flex;
